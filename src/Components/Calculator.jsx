@@ -3,7 +3,7 @@ import { Display } from "./Display";
 
 export function Calculator() {
     return (
-        <div id="calculator">
+        <div className="calculator">
             <Display />
             <Keyboard />
         </div>

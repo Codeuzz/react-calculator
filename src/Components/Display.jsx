@@ -1,7 +1,7 @@
 export function Display() {
     return (
         <div id="display">
-            0001234
+            000
         </div>
     )
 }

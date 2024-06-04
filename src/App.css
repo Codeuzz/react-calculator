@@ -1,27 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 body {
-  background-color: rgb(1, 69, 91);
-  font-size: 20px;
-  font-family: "Orbitron", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f2e4cf;
 }
 
-#calculator {
-  max-width: 400px;
-  border: 2px solid black;
-  height: 450px;
-  margin: 50px auto;
+.calculator {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 320px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 2px;
 }
 
 #display {
-  background-color: black;
   width: 100%;
-  height: 70px;
+  height: 80px;
+  border: none;
+  background-color: #252525;
   color: white;
+  text-align: right;
+  padding: 10px 5px;
   box-sizing: border-box;
-  padding: 0 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
+  font-size: 2.5rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+button {
+  height: 80px;
+  font-size: 1.5rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+button:active {
+  background-color: #e5e5e5;
+}
+
+.operator {
+  background-color: #f9a825;
+  color: white;
+}
+
+.operator:active {
+  background-color: #e08e0b;
+}
+
+.all-clear {
+  background-color: #f44336;
+  color: white;
+}
+
+.all-clear:active {
+  background-color: #e03a2b;
+}
+
+.equal-sign {
+  background-color: #4caf50;
+  color: white;
+  height: calc(120px + 2px);
+  grid-area: 2 / 4 / 4 / 5;
+}
+
+.double {
+  width: 160px;
+}
+.double-height {
+  height: 160px;
+  background-color: #3ba23e;
+}
+
+#keyboard {
+  background-color: #ddd;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: grid;
+  grid-template-columns: 160px 160px;
+  gap: 0;
+}
+
+#grid-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-column: 1 / span 2;
+}
+
+#grid-2 {
+  display: grid;
+  grid-template-columns: 80px;
+  width: 80px;
+  grid-row: 2 / span 2;
+  justify-self: end;
+
+}
+
+#grid-3 {
+  display: grid;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+}
+
+#grid-4 {
+  display: grid;
+  grid-template-columns: 160px 80px;
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+
 }
