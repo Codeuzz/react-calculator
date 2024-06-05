@@ -27,10 +27,12 @@ body {
   text-align: right;
   padding: 10px 5px;
   box-sizing: border-box;
-  font-size: 1.8rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  font-size: 1.6rem;
+
 }
+
 
 button {
   height: 80px;
@@ -53,6 +55,10 @@ button:active {
   background-color: #e08e0b;
 }
 
+#equals:active {
+  background-color: #448b46;
+}
+
 .all-clear {
   background-color: #f44336;
   color: white;
@@ -62,12 +68,7 @@ button:active {
   background-color: #e03a2b;
 }
 
-.equal-sign {
-  background-color: #4caf50;
-  color: white;
-  height: calc(120px + 2px);
-  grid-area: 2 / 4 / 4 / 5;
-}
+
 
 .double {
   width: 160px;

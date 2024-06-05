@@ -18,16 +18,14 @@ export function Calculator() {
                 const newNum = currentNum + e.target.value;
                 display.textContent = newNum;
 
-                // Check overflow
                 if (display.scrollWidth > display.clientWidth) {
                     display.textContent = 'Digit limit met';
                     setTimeout(() => {
-                        display.textContent = currentNum; // Reset to previous value
+                        display.textContent = currentNum; 
                     }, 1000);
                     return;
                 }
 
-                // Update state if no overflow
                 setCurrentNum(newNum);
             }
         };
