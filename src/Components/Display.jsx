@@ -1,7 +1,7 @@
-export function Display() {
+export function Display( { currentNum } ) {
     return (
-        <div id="display">
-            000
+        <div id="display" >
+            {currentNum}
         </div>
     )
 }

@@ -1,16 +1,18 @@
-export function Keyboard() {
+export function Keyboard( { clearDisplay }  ) {
     return (
         <div id="keyboard">
             <div id="grid-1">
-                <button type="button" class="all-clear double" value="all-clear">AC</button>
-                <button type="button" class="operator" value="/">&divide;</button>
-                <button type="button" class="operator" value="*">&times;</button>
+                <button id="clear" type="button" className="all-clear double" value="all-clear"
+                onClick={clearDisplay}
+                >AC</button>
+                <button id="divide" type="button" className="operator" value="/">&divide;</button>
+                <button id="multiply" type="button" className="operator" value="*">&times;</button>
             </div>
 
             <div id="grid-2">
-                <button type="button" class="operator" value="-">-</button>
-                <button type="button" class="operator" value="+">+</button>
-                <button type="button" class="operator double-height" value="=">=</button>
+                <button id="subtract" type="button" className="operator" value="-">-</button>
+                <button id="add" type="button" className="operator" value="+">+</button>
+                <button id="equals" type="button" className="operator double-height" value="=">=</button>
             </div>
             
             <div id="grid-3">
@@ -27,13 +29,9 @@ export function Keyboard() {
            
             <div id="grid-4">
                 <button type="button" id="zero" value="0" className="double">0</button>
-                <button type="button" class="decimal" value=".">.</button>
+                <button id="decimal" type="button" className="decimal" value=".">.</button>
             </div>
-            
-
-
-
-
+        
         </div>
     )
 }
