@@ -1,25 +1,35 @@
 import { Keyboard } from "./Keyboard";
 import { Display } from "./Display";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function Calculator() {
     const [currentNum, setCurrentNum] = useState(' ')
+    const displayRef = useRef(null);
 
     const clearDisplay = () => {
-     const display =  document.getElementById('display')
-     const clear =  document.getElementById('clear')
-
-        if(display !== '') {
-            display.textContent = '';
-            setCurrentNum('')
-        }
-    }
- 
+       setCurrentNum('')
+    };
     
 
     useEffect(() => {
         const handleButtonClick = (e) => {
-            setCurrentNum(prevNum => prevNum + e.target.value);
+            if (displayRef.current) {
+                const display = displayRef.current;
+                const newNum = currentNum + e.target.value;
+                display.textContent = newNum;
+
+                // Check overflow
+                if (display.scrollWidth > display.clientWidth) {
+                    display.textContent = 'Digit limit met';
+                    setTimeout(() => {
+                        display.textContent = currentNum; // Reset to previous value
+                    }, 1000);
+                    return;
+                }
+
+                // Update state if no overflow
+                setCurrentNum(newNum);
+            }
         };
 
         const buttons = document.querySelectorAll('button');
@@ -36,7 +46,7 @@ export function Calculator() {
                 }
             });
         };
-    }, [])
+    }, [currentNum])
 
 
     useEffect(() => {
@@ -46,7 +56,7 @@ export function Calculator() {
       
     return (
         <div className="calculator">
-            <Display currentNum={currentNum} />
+            <Display currentNum={currentNum} ref={displayRef} />
             <Keyboard clearDisplay={clearDisplay} />
         </div>
     )
