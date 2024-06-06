@@ -2,11 +2,19 @@ export function Keyboard( { clearDisplay }  ) {
     return (
         <div id="keyboard">
             <div id="grid-1">
-                <button id="clear" type="button" className="all-clear double" value="all-clear"
-                onClick={clearDisplay}
+                <button 
+                    id="clear" type="button" className="all-clear double" 
+                    value="all-clear"
+                    onClick={clearDisplay}
                 >AC</button>
-                <button id="divide" type="button" className="operator" value="/">&divide;</button>
-                <button id="multiply" type="button" className="operator" value="*">&times;</button>
+                <button 
+                    id="divide" type="button" className="operator" 
+                    value="/"
+                    >&divide;</button>
+                <button 
+                    id="multiply" type="button" className="operator" 
+                    value="*"
+                    >&times;</button>
             </div>
 
             <div id="grid-2">
